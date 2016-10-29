@@ -15,6 +15,7 @@ namespace SymulatorKasyna
 
             while (casinoCash.Cash >0)
             {
+                Console.WriteLine("Stan Twojego konta: $" + cash);
                 switch (Menu())
                 {
                     case 1:
@@ -25,17 +26,14 @@ namespace SymulatorKasyna
                         break;
                     case 2:
                         tmp = cash;
-                        //Console.WriteLine("Kasa gracza przed: " + tmp);
                         GraczWJednorekiegoBandyte gj = new GraczWJednorekiegoBandyte(cash);
                         cash = gj.Play();
-                        //Console.WriteLine("Kasa gracza po: " + cash);
                         casinoCash.Cash += tmp - cash;
                         break;
                     case 3:
                         return;
                 }
                 Console.WriteLine("W kasie kasyna: "+casinoCash.Cash);
-                Console.ReadLine();
                 
             }
             Console.WriteLine("Brak pieniędzy w kasynie!");
