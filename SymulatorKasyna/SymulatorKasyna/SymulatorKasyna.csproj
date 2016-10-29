@@ -43,10 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackJack.cs" />
+    <Compile Include="Casino.cs" />
     <Compile Include="GraczWBlackjacka.cs" />
     <Compile Include="GraczWJednorekiegoBandyte.cs" />
-    <Compile Include="JednorekiBandyta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
