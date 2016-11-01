@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Kierowca.cs" />
+    <Compile Include="DekoratorPieszego.cs" />
+    <Compile Include="DekoratorSamochod.cs" />
     <Compile Include="Pieszy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rowerzysta.cs" />
+    <Compile Include="DekoratorRower.cs" />
     <Compile Include="UzytkownikDrogi.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SymulatorRuchuDrogowego
 {
-    class UzytkownikDrogi
+    abstract class UzytkownikDrogi
     {
+        public abstract int Speed();
+        public abstract string GetName();
+        public abstract void Move();
     }
 }

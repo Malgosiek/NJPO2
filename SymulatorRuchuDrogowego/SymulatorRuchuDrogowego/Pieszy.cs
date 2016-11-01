@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace SymulatorRuchuDrogowego
 {
-    class Pieszy
+    class Pieszy : UzytkownikDrogi
     {
+        public override int Speed()
+        {
+            return 1;
+        }
+        
+        public override string GetName()
+        {
+            return "Pieszy";
+        }
+
+        public override void Move()
+        {
+            ;
+        }
     }
 }
