@@ -28,7 +28,39 @@ namespace LiczenieWPLiku
 
         public static void CountRows()
         {
-            ;
+            bool correct = false;
+            char [] text = {' '};
+
+            do
+            {
+                Console.WriteLine("Podaj ścieżkę do pliku lub pozostaw puste (przykładowy plik tekstowy) i wciśnij Enter.");
+                string odp = "";
+
+                odp += Console.ReadLine();
+
+                if (odp.Equals(""))
+                {
+                    text = System.IO.File.ReadAllText(@"piosenka.txt").ToCharArray();
+                    correct = true;
+                }
+                else
+                {
+                    try
+                    {
+                        text = System.IO.File.ReadAllText(odp).ToCharArray();
+                        correct = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        Console.WriteLine("Błąd! Sprawdź poprawnosć wpisywanych danych i spróbuj ponownie!");
+                    }
+                }
+            } while (correct == false);
+
+            int answer = text.Where(x => x == '\n').Count() +1;
+
+            Console.WriteLine("Liczba Wierszy w tekście to " + answer + ".");
         }
 
         public static void CountWords()
@@ -63,7 +95,8 @@ namespace LiczenieWPLiku
             } while (correct == false);
 
             string[] words = text.Split(new char [] { '\t', '\n', ' '});
-            Console.WriteLine("Słów w tekście jest " +words.Length +".");
+            Console.WriteLine("Liczba Słów w tekście to " + words.Where(x => x!="\r").Count() +".");
+            Console.ReadLine();
         }
     }
 }
