@@ -96,7 +96,6 @@ namespace LiczenieWPLiku
 
             string[] words = text.Split(new char [] { '\t', '\n', ' '});
             Console.WriteLine("Liczba Słów w tekście to " + words.Where(x => x!="\r").Count() +".");
-            Console.ReadLine();
         }
     }
 }
