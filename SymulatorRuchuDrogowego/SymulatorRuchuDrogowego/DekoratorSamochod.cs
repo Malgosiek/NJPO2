@@ -20,7 +20,7 @@ namespace SymulatorRuchuDrogowego
 
         public override string GetName()
         {
-            return "Kierowca samochodu";
+            return "K";
         }
     }
 }

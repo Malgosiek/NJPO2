@@ -15,12 +15,12 @@ namespace SymulatorRuchuDrogowego
 
         public override int Speed()
         {
-            return base.Speed() + 1;
+            return 2;
         }
 
         public override string GetName()
         {
-            return "Rowerzysta";
+            return "R";
         }
     }
 }

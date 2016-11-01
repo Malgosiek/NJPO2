@@ -8,6 +8,20 @@ namespace SymulatorRuchuDrogowego
 {
     class Pieszy : UzytkownikDrogi
     {
+        private int _X;
+        public override int X
+        {
+            get { return _X; }
+            set { _X = value; }
+        }
+
+        private int _y;
+        public override int Y
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
+        
         public override int Speed()
         {
             return 1;
@@ -15,12 +29,7 @@ namespace SymulatorRuchuDrogowego
         
         public override string GetName()
         {
-            return "Pieszy";
-        }
-
-        public override void Move()
-        {
-            ;
+            return "P";
         }
     }
 }

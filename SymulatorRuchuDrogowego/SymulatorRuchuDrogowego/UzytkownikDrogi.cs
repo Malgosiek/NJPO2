@@ -8,8 +8,16 @@ namespace SymulatorRuchuDrogowego
 {
     abstract class UzytkownikDrogi
     {
+        public abstract int X
+        {
+            get; set;
+        }
+        public abstract int Y
+        {
+            get; set;
+        }
+
         public abstract int Speed();
         public abstract string GetName();
-        public abstract void Move();
     }
 }

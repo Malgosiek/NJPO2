@@ -9,6 +9,15 @@ namespace SymulatorRuchuDrogowego
     class DekoratorPieszego : UzytkownikDrogi
     {
 
+        public override int X
+        {
+            get; set;
+        }
+        public override int Y
+        {
+            get; set;
+        }
+
         protected UzytkownikDrogi _uzytkownikdrogi;
 
         public DekoratorPieszego(UzytkownikDrogi uzytkownikDrogi)
@@ -23,10 +32,6 @@ namespace SymulatorRuchuDrogowego
         public override string GetName()
         {
             return _uzytkownikdrogi.GetName();
-        }
-        public override void Move()
-        {
-            _uzytkownikdrogi.Move();
         }
     }
 }
