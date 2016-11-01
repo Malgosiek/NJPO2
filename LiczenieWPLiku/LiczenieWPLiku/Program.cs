@@ -33,23 +33,34 @@ namespace LiczenieWPLiku
 
         public static void CountWords()
         {
-            Console.WriteLine("Podaj ścieżkę do pliku lub pozostaw puste (przykładowy plik tekstowy) i wciśnij Enter.");
-            string odp = "";
+            bool correct = false;
             string text = "";
-
-            odp += Console.ReadLine();
-            if (odp.Equals(""))
-                text = System.IO.File.ReadAllText(@"piosenka.txt");
-            else
+            do
             {
-                try
+                Console.WriteLine("Podaj ścieżkę do pliku lub pozostaw puste (przykładowy plik tekstowy) i wciśnij Enter.");
+                string odp = "";
+
+                odp += Console.ReadLine();
+
+                if (odp.Equals(""))
                 {
-                    text = System.IO.File.ReadAllText(odp);
-                }catch(Exception e)
-                {
-                    Console.WriteLine(e.Message);
+                    text = System.IO.File.ReadAllText(@"piosenka.txt");
+                    correct = true;
                 }
-            }
+                else
+                {
+                    try
+                    {
+                        text = System.IO.File.ReadAllText(odp);
+                        correct = true;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        Console.WriteLine("Błąd! Sprawdź poprawnosć wpisywanych danych i spróbuj ponownie!");
+                    }
+                }
+            } while (correct == false);
 
             string[] words = text.Split(new char [] { '\t', '\n', ' '});
             Console.WriteLine("Słów w tekście jest " +words.Length +".");
