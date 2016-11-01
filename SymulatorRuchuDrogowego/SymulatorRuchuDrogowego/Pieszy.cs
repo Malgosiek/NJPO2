@@ -21,6 +21,14 @@ namespace SymulatorRuchuDrogowego
             get { return _y; }
             set { _y = value; }
         }
+
+        public Pieszy() { }
+
+        public Pieszy(UzytkownikDrogi user)
+        {
+            X = user.X;
+            Y = user.Y;
+        }
         
         public override int Speed()
         {

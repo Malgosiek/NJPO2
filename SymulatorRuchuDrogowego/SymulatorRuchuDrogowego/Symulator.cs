@@ -67,13 +67,29 @@ namespace SymulatorRuchuDrogowego
 
             do
             {
+                Console.Clear();
+                Console.Write("User1: ");
+                user1 = Change(user1);
+                Console.WriteLine("User1 to: " + user1.GetType().Name);
+                //Console.WriteLine("User2 Speed: " + user1.Speed());
+
+                Console.Write("User2: ");
+                user2 = Change(user2);
+                Console.WriteLine("User2 to: " + user2.GetType().Name);
+                //Console.WriteLine("User2.Speed: " + user2.Speed());
+
+                Console.Write("User3: ");
+                user3 = Change(user3);
+                Console.WriteLine("User3 to: " + user3.GetType().Name);
+                //Console.WriteLine("User3 Speed: " + user3.Speed());
+
+                Console.WriteLine();
 
                 user1 = CalculatePos(user1);
                 user2 = CalculatePos(user2);
                 user3 = CalculatePos(user3);
 
-                Thread.Sleep(1000);
-                Console.Clear();
+                
                 for (int i = 0; i < boardSize; i++)
                 {
                     for (int j = 0; j < boardSize; j++)
@@ -98,6 +114,8 @@ namespace SymulatorRuchuDrogowego
                     }
                     Console.Write("\n");
                 }
+                Thread.Sleep(1000);
+                //Console.ReadLine();
             } while (kraksa == false);
 
             Console.WriteLine("Kraksa!");
@@ -140,6 +158,29 @@ namespace SymulatorRuchuDrogowego
                         break;
                 }
             }
+            return user;
+        }
+
+        UzytkownikDrogi Change(UzytkownikDrogi user)
+        {
+            double chance = r.NextDouble();
+            if (0.8 < chance && chance <= 0.9 && !(user is DekoratorRower))
+            {
+                Console.WriteLine("Przesiada się na rower.");
+                user = new DekoratorRower(user);
+            }
+            else if (0.9 < chance && !(user is DekoratorSamochod))
+            {
+                Console.WriteLine("Przesiada się na samochód.");
+                user = new DekoratorSamochod(user);
+            }
+            else if (0.5 < chance && chance <= 0.8 && (user is DekoratorRower || user is DekoratorSamochod))
+            {
+                Console.WriteLine("Zaczyna iść pieszo.");
+                user = new Pieszy(user);
+            }
+            else
+                Console.WriteLine("Pozostaje przy swoim środku transportu.");
             return user;
         }
     }

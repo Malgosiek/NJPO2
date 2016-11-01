@@ -14,9 +14,16 @@ namespace SymulatorRuchuDrogowego
             while (true)
             {
                 Console.Write("Podaj rozmiar planszy (sugerowane 5): ");
-                int length = Convert.ToInt32(Console.ReadLine());
-                Symulator sym = new Symulator(length);
-                sym.Play();
+                try
+                {
+                    int length = Convert.ToInt32(Console.ReadLine());
+                    Symulator sym = new Symulator(length);
+                    sym.Play();
+                }
+                catch(Exception)
+                {
+                    Console.WriteLine("Nieprawidłowa wartość.");
+                }
             }
         }
     }

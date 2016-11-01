@@ -23,6 +23,8 @@ namespace SymulatorRuchuDrogowego
         public DekoratorPieszego(UzytkownikDrogi uzytkownikDrogi)
         {
             _uzytkownikdrogi = uzytkownikDrogi;
+            X = uzytkownikDrogi.X;
+            Y = uzytkownikDrogi.Y;
         }
 
         public override int Speed()
