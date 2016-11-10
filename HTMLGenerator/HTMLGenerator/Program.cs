@@ -21,7 +21,7 @@ namespace HTMLGenerator
             SimpleFactory factory = new SimpleFactory();
             Random random = new Random();
 
-            Page page = factory.CreatePage(PageType.Contact);
+            Page page = factory.CreatePage((PageType)random.Next(4));
             Console.WriteLine(page.GetType());
             page = factory.CreatePage((PageType)random.Next(4));
             Console.WriteLine(page.GetType());
@@ -29,6 +29,7 @@ namespace HTMLGenerator
             Console.WriteLine(page.GetType());
             page = factory.CreatePage((PageType)random.Next(4));
             Console.WriteLine(page.GetType());
+            
             Console.ReadLine();
         }
     }

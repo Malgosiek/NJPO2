@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HTMLGenerator
@@ -48,8 +49,9 @@ namespace HTMLGenerator
                 file.WriteLine(@"<br></h2>
                 </div>
                 </body ></html > ");
-                Console.ReadLine();
             }
+            System.Diagnostics.Process.Start(@"contactpage.html");
+            Thread.Sleep(500);
         }
     }
 }
