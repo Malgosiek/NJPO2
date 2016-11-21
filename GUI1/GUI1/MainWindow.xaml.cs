@@ -20,9 +20,20 @@ namespace GUI1
     /// </summary>
     public partial class MainWindow : Window
     {
+        string name;
+
         public MainWindow()
         {
             InitializeComponent();
+            textBlock.Text = "Your name: ";
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            name = textBox.Text;
+            textBlock.Text = "Hello " + name + "!";
+            button.Visibility = Visibility.Collapsed;
+            textBox.Visibility = Visibility.Collapsed;
         }
     }
 }
