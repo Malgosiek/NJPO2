@@ -11,5 +11,6 @@
         <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23" Margin="0,0,0,0" VerticalAlignment="Center" Width="120"/>
         <Button x:Name="button" Content="Sprawdź poprawność" HorizontalAlignment="Center" Margin="0,0,0,-50" VerticalAlignment="Center" Width="120" Click="button_Click"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" Margin="0,0,0,-100" TextWrapping="Wrap"  VerticalAlignment="Center"/>
+        <Button x:Name="button1" Content="Otwórz plik" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="80" Click="button1_Click"/>
     </Grid>
 </Window>

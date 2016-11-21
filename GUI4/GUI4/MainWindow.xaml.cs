@@ -39,10 +39,22 @@ namespace GUI4
                 sum = 10 - sum;
                 sum %= 10;
                 if (sum == int.Parse(pesel[10].ToString()))
+                {
                     textBlock2.Text = "PESEL poprawny!";
+                    System.IO.StreamWriter file = new System.IO.StreamWriter(@"PESEL.txt", true);
+                    file.WriteLine(pesel);
+                    file.Dispose();
+                }
                 else
                     textBlock2.Text = "PESEL niepoprawny!";
             }
+            else
+                textBlock2.Text = "PESEL niepoprawny - zła długość!";
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"PESEL.txt");
         }
     }
 }
