@@ -24,5 +24,16 @@ namespace GUI3
         {
             InitializeComponent();
         }
+
+        private void button_MouseMove(object sender, MouseEventArgs e)
+        {
+            Random r = new Random();
+            int tmp1, tmp2, tmp3, tmp4;
+            tmp1 = r.Next(200);
+            tmp2 = r.Next(200);
+            tmp3 = r.Next(200-tmp1);
+            tmp4 = r.Next(200-tmp2);
+            button.Margin = new Thickness(tmp1, tmp2, tmp3, tmp4);
+        }
     }
 }

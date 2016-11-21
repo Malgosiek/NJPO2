@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="300" Width="300">
     <Grid>
-        
+        <Button x:Name="button" Content="Click me!" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="55" Height="20" MouseMove="button_MouseMove"/>
+
     </Grid>
 </Window>
