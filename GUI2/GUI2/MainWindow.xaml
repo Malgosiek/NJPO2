@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="300" Width="300">
     <Grid>
-        
+        <TextBox x:Name="textBox1" HorizontalAlignment="Center" Margin="0,0,140,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="50" Height="50"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Center" Margin="0,0,-140,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="50" Height="50"/>
+        <RadioButton x:Name="radioButton1" Content="+" HorizontalAlignment="Center" Margin="0,-30,30,0" VerticalAlignment="Center"/>
+        <RadioButton x:Name="radioButton2" Content="-" HorizontalAlignment="Center" Margin="0,-30,-30,0" VerticalAlignment="Center"/>
+        <RadioButton x:Name="radioButton3" Content="*" HorizontalAlignment="Center" Margin="0,30,33,0" VerticalAlignment="Center"/>
+        <RadioButton x:Name="radioButton4" Content="/" HorizontalAlignment="Center" Margin="0,30,-30,0" VerticalAlignment="Center"/>
+        <Button x:Name="button" HorizontalAlignment="Center" Height="23" Margin="0,90,0,0" Content="=" VerticalAlignment="Center" Width="190" Click="button_Click" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="23" Margin="0,150,0,0" VerticalAlignment="Center" Width="190" IsEnabled="False" />
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,0,0,100" TextWrapping="Wrap" Text="Calculator" VerticalAlignment="Center" FontSize="18"/>
     </Grid>
 </Window>
