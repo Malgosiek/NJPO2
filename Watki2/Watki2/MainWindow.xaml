@@ -1,0 +1,39 @@
+﻿<Window x:Class="Watki2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Watki2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Obliczanie silni" FontSize="20" HorizontalAlignment="Center" />
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" >
+            <Label Content="Wpisz wartość z której ma być obliczona:" HorizontalAlignment="Center"/>
+            <TextBox x:Name="number" Width="200" HorizontalAlignment="Center"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Button x:Name="StartButton" Content="START" Width="80" Height="25" Click="StartButton_Click" />
+                <Button x:Name="StopButton" Content="STOP (Nie chcę dłużej czekać)" Width="180" Height="25" IsEnabled="False" Click="StopButton_Click" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" >
+            <Label Content="Silnia iteracyjnie:" HorizontalAlignment="Center"/>
+            <Label x:Name="iterative" HorizontalAlignment="Center"/>
+            <Label Content="Silnia rekurencyjnie:" HorizontalAlignment="Center"/>
+            <Label x:Name="recursive" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center" >
+            <Label Content="Czas iteracyjnie:" HorizontalAlignment="Center"/>
+            <Label x:Name="timeIter" HorizontalAlignment="Center"/>
+            <Label Content="Czas rekurencyjnie:" HorizontalAlignment="Center"/>
+            <Label x:Name="timeRec" HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</Window>
